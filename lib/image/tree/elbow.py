@@ -1,1 +1,1 @@
-elbowGIF = """ """
+elbowGIF = """R0lGODlhEAAUAKECAEL/QsbGxv///////yH5BAEAAAAALAAAAAAQABQAAAIahG+By+2gnpxxWlavhrurz3VOJkpkOaLWKRYAOw=="""

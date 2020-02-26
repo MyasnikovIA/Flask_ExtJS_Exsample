@@ -5,12 +5,6 @@ from lib.extlib2 import extlib2
 from lib.locale_ru import locale_ru
 from lib.css.theme_classic import theme_classic
 
-#    http://127.0.0.1:5000/images/tree/elbow.gif
-from lib.image.tree.elbow import elbowGIF
-#    http://127.0.0.1:5000/images/tree/leaf.gif
-from lib.image.tree.leaf import leafGIF
-#    http://127.0.0.1:5000/images/tree/elbow-end.gif
-from lib.image.tree.elbow_end import elbowEndGif
 
 app = Flask(__name__)
 
@@ -126,30 +120,12 @@ def all_other_routes(the_path):
     if (the_path == "theme_classic.css"):
         head = {'content-type': 'text/css; charset=utf-8', 'Content-Length': len(locale_ru)}
         return theme_classic, 200, head
-    # -------------------------------------------------------------------------------------------
-    # ------------------- Images ----------------------------------------------------------------
-    if (the_path == "images/tree/elbow.gif"):
-        # http://127.0.0.1:5000/images/tree/elbow.gif
-        gifImg = elbowGIF  # конвертировать в Base64 и обратно
-        head = {'content-type': 'image/gif', 'Content-Length': len(gifImg)}
-        return gifImg, 200, head
 
-    if (the_path == "images/tree/leaf.gif"):
-        # http://127.0.0.1:5000/images/tree/leaf.gif
-        gifImg = leafGIF  # конвертировать в Base64 и обратно
-        head = {'content-type': 'image/gif', 'Content-Length': len(gifImg)}
-        return gifImg, 200, head
-
-    if (the_path == "images/tree/elbow-end.gif"):
-        # http://127.0.0.1:5000/images/tree/elbow-end.gif
-        gifImg = elbowEndGif  # конвертировать в Base64 и обратно
-        head = {'content-type': 'image/gif', 'Content-Length': len(gifImg)}
-        return gifImg, 200, head
-    # -------------------------------------------------------------------------------------------
-    # -------------------------------------------------------------------------------------------
 
     print(the_path)
     return app.send_static_file(the_path)
+
+
 
 
 if __name__ == '__main__':
@@ -159,3 +135,7 @@ if __name__ == '__main__':
         port = 8080
     app.run(debug=True, host="0.0.0.0", port=port)
     # app.run( debug = True, host="0.0.0.0", port=port, ssl_context = 'adhoc')  # Generate Adhoc Certs
+
+
+
+
